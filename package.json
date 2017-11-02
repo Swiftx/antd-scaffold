@@ -1,5 +1,5 @@
 {
-  "name": "scaffold",
+  "name": "antd-scaffold",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,8 +7,8 @@
     "dev": "gulp --gulpfile config/gulp.babel.js dev",
     "server": "webpack-dev-server"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "胡永强 <odaytudio@foxmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
