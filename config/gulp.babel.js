@@ -1,11 +1,26 @@
 import gulp from 'gulp';
 import webpack from 'webpack';
 import gutil from 'gulp-util';
+import htmlReplace from "gulp-html-replace";
 import WebpackDevServer from 'webpack-dev-server';
 import webpackConfig from './webpack';
 import devServerConfig from './dev-server';
 
-gulp.task("dev", function() {
+/**
+ * 部署入口文件
+ */
+gulp.task('html', () => {
+    gulp.src('../src/index.html')
+        .pipe(htmlReplace({
+            'js': 'bundle.js'
+        }))
+        .pipe(gulp.dest('../dist'));
+});
+
+/**
+ * 开启开发环境
+ */
+gulp.task("dev", ['html'], () => {
     // 读取配置
     let listen = {
         hostname : devServerConfig.hostname,
