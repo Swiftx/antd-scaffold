@@ -31,9 +31,14 @@ gulp.task("dev", ['html'], () => {
     // 生成服务器
     let compiler = webpack(webpackConfig);
     let server = new WebpackDevServer(compiler, devServerConfig);
+
     // 监听服务器
-    server.listen(listen.port, listen.hostname, function(err) {
+    server.listen(listen.port, listen.hostname, (err) => {
         if(err) throw new gutil.PluginError("webpack-dev-server", err);
-        //gutil.log("[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html");
+        let url = "http://";
+        url += listen.hostname;
+        url += ':'+listen.port;
+        url += "/webpack-dev-server/index.html"
+        gutil.log("[webpack-dev-server]", url);
     });
 });
