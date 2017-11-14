@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import 'antd/dist/antd.css';
+import './style.css';
+import Router from "./router";
 
-ReactDOM.render(
-    <h1>Hello world!</h1>,
-    document.getElementById('root')
-);
+const element = document.getElementById('root');
+ReactDOM.render(<Router/>, element);

@@ -1,10 +1,14 @@
 import path from 'path';
+
 export default {
     devtool : 'eval-source-map',                // 生成站点地图
     entry :  path.resolve("../src/index.jsx"),   // 唯一入口文件
     output : {
         path : path.resolve("../dist"),         // 打包后的文件存放的地方
         filename : "bundle.js"                  // 打包后输出文件的文件名
+    },
+    resolve:{
+        extensions: ['.jsx', '.js']
     },
     module: {
         loaders: [{
@@ -13,7 +17,13 @@ export default {
             loader: 'babel-loader'
         },{
             test: /\.css$/,
-            loader: 'style-loader!css-loader'//添加对样式表的处理
+            loader: 'style-loader!css-loader?modules'//添加对样式表的处理
+        },{
+            test: /\.less$/,
+            loader: 'style-loader!css-loader!less-loader'
+        },{
+            test: /\.(png|jpg|gif)$/,
+            loader: 'url-loader?limit=8192&name=./static/img/[hash].[ext]',
         }]
     }
 };
