@@ -1,39 +1,58 @@
 .box {
     height : 100%;
     width : 100%;
-    background : #000 url("./background.jpg") no-repeat center center;
+    background : url("./background.jpg") no-repeat center center;
 }
-.mainBox {
+.main {
     margin : auto;
     position: absolute;
     width: 1200px;
-    height: 375px;
+    height: 800px;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
 }
-.loginFormBox {
-    width: 320px;
-    height: 375px;
-    float: right;
+
+.header {
+    height: 90px;
+    background : url("./logo.png") no-repeat left center;
 }
-.titleBox{
+
+.body {
+    height: 620px;
+    padding-top: 100px;
+}
+
+.footer {
+    height: 80px;
+    padding-top: 10px;
+    text-align: center;
+    color: #666;
+}
+
+.title{
     float: left;
     padding-top: 20px;
     width: 800px;
 }
-.titleBox h1{
+.title h1{
     font-size: 60px;
     width:100%;
     color: #FFF;
     text-shadow:5px 2px 6px #000;
 }
-.titleBox p{
+.title p{
     font-size: 30px;
     color: #fefefe;
     padding-top: 14px;
     width: 100%;
     line-height: 38px;
     text-shadow:5px 2px 6px #000;
+}
+
+.form {
+    width: 320px;
+    height: 375px;
+    float: right;
 }

@@ -1,15 +1,16 @@
 import React from 'react';
-import {HashRouter, Switch, Route} from "react-router-dom";
-import {View as LoginPage} from "./pages/Login";
+import { Switch, Route } from "react-router-dom";
+import { ConnectedRouter } from 'react-router-redux';
+import { View as LoginPage } from "./pages/Login";
 
 export default class extends React.Component {
     render() {
         return (
-            <HashRouter>
+            <ConnectedRouter history={this.props.history}>
                 <Switch>
                     <Route path="/login" component={LoginPage} />
                 </Switch>
-            </HashRouter>
+            </ConnectedRouter>
         );
     }
 }

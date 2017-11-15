@@ -1,8 +1,6 @@
 import React from 'react';
+import { View as Form } from '../../widgets/LoginForm';
 import style from './style.css';
-
-
-console.log(style);
 
 export default class extends React.Component {
 
@@ -20,14 +18,21 @@ export default class extends React.Component {
     render () {
         return (
             <div className={style.box}>
-                <div className={style.mainBox}>
-                    <div className={style.titleBox}>
-                        <h1>微信小程序行业解决方案</h1>
-                        <p>为您实现：微信开店，客源更多，成本更低！</p>
+                <div className={style.main}>
+                    <div className={style.header}>
 
                     </div>
-                    <div className={style.loginFormBox}>
-
+                    <div className={style.body}>
+                        <div className={style.title}>
+                            <h1>微信小程序行业解决方案</h1>
+                            <p>为您实现：微信开店，客源更多，成本更低！</p>
+                        </div>
+                        <div className={style.form}>
+                            <Form/>
+                        </div>
+                    </div>
+                    <div className={style.footer}>
+                        Copyright © 2017-{new Date().getFullYear()}  厦门店宝宝网络科技有限公司 dianbaobao.top 版权所有
                     </div>
                 </div>
             </div>
