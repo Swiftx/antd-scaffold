@@ -23,7 +23,6 @@ class View extends React.Component {
         e.preventDefault();
         const props = this.props;
         props.form.validateFields((err, values) => {
-            console.log(err);
             if (!err) props.onSubmit(values);
             else props.onSubmit(err, values);
         });

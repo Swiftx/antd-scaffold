@@ -1,5 +1,5 @@
 import React from 'react';
-import { View as Form } from '../../widgets/LoginForm';
+import Form from '../../widgets/LoginForm';
 import style from './style.css';
 
 export default class extends React.Component {
