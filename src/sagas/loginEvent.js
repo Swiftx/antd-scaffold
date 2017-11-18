@@ -1,5 +1,7 @@
-import { takeEvery, effects } from 'redux-saga';
+import { takeEvery } from 'redux-saga';
 import { Actions } from '../widgets/LoginForm';
+import { push } from 'react-router-redux';
+import store from '../state/store';
 import axios from 'axios';
 const { types } = Actions;
 
@@ -7,7 +9,10 @@ const { types } = Actions;
 const postLoginAsync = function* (action) {
     let response = yield axios.post('/user/login',action.data);
     let data = response.data;
-    console.log('执行表单提交: ', data);
+    if(data.error === 0) {
+        store.dispatch(Actions.loginSuccess(data.info));
+        store.dispatch(push('/index'));
+    }
 };
 
 // 监听登陆开始事件

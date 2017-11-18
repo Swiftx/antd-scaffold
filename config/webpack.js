@@ -8,10 +8,13 @@ export default {
         filename : "bundle.js"                  // 打包后输出文件的文件名
     },
     resolve:{
-        extensions: ['.jsx', '.js']
+        extensions: ['.tsx','.jsx', '.js']
     },
     module: {
         loaders: [{
+            test: /\.tsx?$/,
+            loader:'ts-loader!babel-loader'
+        },{
             test: /\.jsx?$/,
             exclude: /node_modules/,
             loader: 'babel-loader'

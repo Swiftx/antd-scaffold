@@ -1,6 +1,6 @@
 import React from 'react';
-import { Form, Icon, Input, Button } from 'antd';
-import axios from "axios";
+import { Form, Icon, Input, Button, Spin } from 'antd';
+import { options } from './states';
 import style from "./style.css";
 const Item = Form.Item;
 
@@ -58,29 +58,25 @@ class View extends React.Component {
         const UsernameInput = this.buildUsernameInput();
         const PasswordInput = this.buildPasswordInput();
         return (
-            <Form className={style.box} onSubmit={this.handleSubmit}>
-                <Item>
-                    <h1 className={style.title}>管理员登陆</h1>
-                </Item>
-                <Item>{UsernameInput}</Item>
-                <Item>{PasswordInput}</Item>
-                <Item className={style.submit}>
-                    <Button className={style.button} type="primary" htmlType="submit">登陆</Button>
-                </Item>
-            </Form>
+            <Spin spinning={this.props.loading} >
+                <Form className={style.box} onSubmit={this.handleSubmit}>
+                    <Item>
+                        <h1 className={style.title}>管理员登陆</h1>
+                    </Item>
+                    <Item>{UsernameInput}</Item>
+                    <Item>{PasswordInput}</Item>
+                    <Item className={style.submit}>
+                        <Button className={style.button} type="primary" htmlType="submit">登陆</Button>
+                    </Item>
+                </Form>
+            </Spin>
         );
     }
 }
 
 View.defaultProps = {
+    loading : true,
     onSubmit(values) {
-        axios.get('/user/login').then((response) => {
-            return response.data;
-        }).then((data) => {
-            console.log(data);
-        }).catch((error) => {
-            console.log(error);
-        });
         console.log('执行表单提交: ', values);
     },
     onValidError(error, values){

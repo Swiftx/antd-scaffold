@@ -1,0 +1,44 @@
+.layout {
+    height: 100%;
+    min-width: 1200px;
+}
+.header {
+    padding-top:16px;
+    background: #FFF;
+    box-shadow: 0 0 8px #666;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+}
+.box {
+    width: 1200px;
+    margin: 0 auto 0;
+}
+.sider {
+    background: #FFF;
+    box-shadow: 1px 0 8px #666;
+}
+
+.title {
+    color: #108ee9;
+    margin: 0;
+    padding: 0;
+    height: 48px;
+    width: 200px;
+    text-align: center;
+    line-height: 48px;
+    font-weight: bold;
+    float: left;
+}
+.menu {
+    float: right;
+    width: 1000px;
+    height: 48px;
+}
+.leftMenu{
+    margin-top: 112px;
+    text-indent: 26px;
+}
+.clear {
+    clear: both;
+}

@@ -10,6 +10,9 @@ console.log("测试账号："+user.username+" 密码："+user.password);
 
 const success = {
     error : 0,
+    info : {
+      username : 'root'
+    },
     msg : "登陆成功"
 };
 

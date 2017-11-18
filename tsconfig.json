@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "target": "es5",
+    "sourceMap" : true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
